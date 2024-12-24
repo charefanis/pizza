@@ -31,12 +31,16 @@
     color: black;
     border: 1px solid #ccc;
     overflow: hidden;
+    border: none;
+    border-radius: 5px;
+    background-color: black;
 }
 
 .c-items img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    opacity: 65%;
 }
 
 .fa-pizza-slice, .fa-burger, .fa-leaf, .fa-mug-saucer, .fa-ice-cream, .fa-fish-fins {
@@ -56,10 +60,12 @@
     align-items: center;
     z-index: 2;
 }
-.c-items .text {
-    margin-top: 70px;
-    text-align: center;
-    width: 100%;
+.text{
+    position: absolute;
+    z-index: 3;
+    bottom: 70px;
+    color: white;
+    font-weight: 500;
 }
 .image-container {
     position: relative;
@@ -78,6 +84,6 @@
     color: white;
     text-align: center;
 }
-#tel a, #loc a, .fa {
-    color: inherit;
+#tel a, #loc a, .fa-brands {
+    color: white;
 }
