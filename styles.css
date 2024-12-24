@@ -1,0 +1,83 @@
+.c-item{
+    height: 750px;
+    width: 100%;
+}
+.c-img{
+    height: 100%;
+}
+.c-h1{
+    text-align: center;
+}
+.section1{
+    display: flex;
+    justify-content: center;
+}
+.grid{
+    display: flex;
+    height: 700px;
+    width: 1100px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.c-items {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 300px;
+    text-decoration: none;
+    color: black;
+    border: 1px solid #ccc;
+    overflow: hidden;
+}
+
+.c-items img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.fa-pizza-slice, .fa-burger, .fa-leaf, .fa-mug-saucer, .fa-ice-cream, .fa-fish-fins {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background-color: blueviolet;
+    font-size: 40px;
+    border-radius: 50%;
+    padding: 10px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+.c-items .text {
+    margin-top: 70px;
+    text-align: center;
+    width: 100%;
+}
+.image-container {
+    position: relative;
+    height: 400px;
+}
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+}
+#tel a, #loc a, .fa {
+    color: inherit;
+}
