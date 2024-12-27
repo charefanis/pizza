@@ -39,8 +39,14 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    position: absolute;
+    transition: 0.4s ease-in-out;
 }
 
+.img-front:hover{
+    opacity: 0;
+    cursor: pointer;
+}
 .fa-pizza-slice, .fa-burger, .fa-leaf, .fa-mug-saucer, .fa-ice-cream, .fa-fish-fins {
     position: absolute;
     top: 50%;
@@ -75,6 +81,7 @@
     object-fit: cover;
 }
 .overlay-text {
+    font-family: "Roboto";
     position: absolute;
     top: 50%;
     left: 50%;
