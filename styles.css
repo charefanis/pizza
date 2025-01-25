@@ -1,4 +1,7 @@
-.c-item{
+.navbar-toggler{
+    position: absolute;
+    right: 15%;
+}.c-item{
     height: 900px;
     width: 100%;
 }
@@ -71,6 +74,42 @@
 #tel a, #loc a, .fa-brands {
     color: white;
 }
+.cart{
+    color: black;
+    position: relative;
+    font-size: 24px;
+}
+.cart-number{
+    position: absolute;
+    top: -10px;
+    right: -15px;
+    background-color: red;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    opacity: 0;
+}
+.fade-down {
+    animation: fadeDown 0.8s ease-in-out forwards;
+}
+
+@keyframes fadeDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px); /* Start higher */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* End at original position */
+    }
+}
 @media(max-width:650px){
     .c-item{
         height: 450px;
@@ -104,4 +143,123 @@
         flex-wrap: wrap;
         justify-content: space-around;
     }
+}
+footer{
+    background-color: rgb(32, 30, 30)
+}
+.section-salad{
+    display: flex;
+    justify-content: center;
+}
+.div-salad{
+    display: flex;
+    margin-top: 70px;
+    margin-bottom: 70px;
+    width: 700px;
+    height: 800px;
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+}
+.d-item{
+    height: 300px;
+    border-top-right-radius: 10px; 
+    border-top-left-radius: 10px; 
+    box-shadow: 0 -1px 10px hsla(0, 0%, 0%, 0.3);
+    position: relative;
+}
+.salad1{
+    margin: 0 15px;
+    transition: all 0.4s;
+}
+.salad1:hover{
+    transform: scale(1.1);
+}
+.salad2{
+    margin: 0 15px;
+    transition: all 0.4s;
+}
+.salad2:hover{
+    transform: scale(1.1);
+}
+.salad3{
+    margin: 0 15px;
+    transition: all 0.4s;
+}
+.salad3:hover{
+    transform: scale(1.1);
+}
+.salad4{
+    margin: 0 15px;
+    transition: all 0.4s;
+}
+.salad4:hover{
+    transform: scale(1.1);
+}
+.text{
+    background-color: white;
+    height: 120px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 5px 5px 15px hsl(0, 0%, 0%, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.add-cart{
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffd65a;
+    font-weight: bold;
+    height: 60px;
+    width: 150px;
+    border: none;
+    border-radius: 5px;
+    opacity: 0; /* Initially hidden */
+    visibility: hidden; /* Ensure it's not interactive when not visible */
+    transition: opacity 0.3s ease-out visibility 0.3s ease-out;
+}
+
+/* Hovering on the parent container */
+.salad1:hover .add-cart,
+.salad2:hover .add-cart,
+.salad3:hover .add-cart, 
+.salad4:hover .add-cart { 
+    opacity: 1; /* Fade in */
+    visibility: visible;
+    animation: fadeInFromTop 0.5s ease-out; /* Trigger the animation */
+}
+
+/* Keyframes for fade-in from the left */
+@keyframes fadeInFromTop {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -250%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Hover effect on the button itself */
+.add-cart:hover {
+    background-color: #20c997;
+    transition: all 0.3s ease-out;
+}
+.c-h1{
+    margin-top: 100px;
+}
+.price-name{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+}
+.footer-separator{
+    height: 1px;
+    width: 100%;
+    background-color: #999;
 }
