@@ -1,7 +1,24 @@
-.navbar-toggler{
-    position: absolute;
-    right: 15%;
-}.c-item{
+body{
+    color: black;
+    background-color: white;
+}
+.dark-mode{
+    color: white;
+    background-color: black;
+}
+.nav-items-1 a{
+    list-style-type: none;
+    text-decoration: none;
+    color: black;
+    margin: 0 15px;
+}
+.nav-items-1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.c-item{
     height: 900px;
     width: 100%;
 }
@@ -78,6 +95,12 @@
     color: black;
     position: relative;
     font-size: 24px;
+    margin: 0 15px;
+}
+.fa-user{
+    color: black;
+    font-size: 24px;
+    margin: 0 15px;
 }
 .cart-number{
     position: absolute;
@@ -145,19 +168,18 @@
     }
 }
 footer{
-    background-color: rgb(32, 30, 30)
+    background-color: rgb(32, 30, 30);
 }
 .section-salad{
     display: flex;
     justify-content: center;
 }
 .div-salad{
-    display: flex;
     margin-top: 70px;
     margin-bottom: 70px;
     width: 700px;
-    height: 800px;
     display: flex;
+    justify-content: center;
     text-align: center;
     flex-wrap: wrap;
 }
@@ -168,36 +190,18 @@ footer{
     box-shadow: 0 -1px 10px hsla(0, 0%, 0%, 0.3);
     position: relative;
 }
-.salad1{
+.salad{
     margin: 0 15px;
+    margin-bottom: 15px;
     transition: all 0.4s;
 }
-.salad1:hover{
+.salad:hover{
     transform: scale(1.1);
-}
-.salad2{
-    margin: 0 15px;
-    transition: all 0.4s;
-}
-.salad2:hover{
-    transform: scale(1.1);
-}
-.salad3{
-    margin: 0 15px;
-    transition: all 0.4s;
-}
-.salad3:hover{
-    transform: scale(1.1);
-}
-.salad4{
-    margin: 0 15px;
-    transition: all 0.4s;
-}
-.salad4:hover{
-    transform: scale(1.1);
+    z-index: 999;
 }
 .text{
     background-color: white;
+    color: black;
     height: 120px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -217,18 +221,20 @@ footer{
     height: 60px;
     width: 150px;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     opacity: 0; /* Initially hidden */
     visibility: hidden; /* Ensure it's not interactive when not visible */
-    transition: opacity 0.3s ease-out visibility 0.3s ease-out;
+    transition: all 0.3s ease-in-out;
+}
+/* Hover effect on the button itself */
+.add-cart:hover {
+    background-color: #20c997;
+    transform: translate(-50%, -50%) scale(1.1);
 }
 
 /* Hovering on the parent container */
-.salad1:hover .add-cart,
-.salad2:hover .add-cart,
-.salad3:hover .add-cart, 
-.salad4:hover .add-cart { 
-    opacity: 1; /* Fade in */
+.salad:hover .add-cart { 
+    opacity: 1;
     visibility: visible;
     animation: fadeInFromTop 0.5s ease-out; /* Trigger the animation */
 }
@@ -245,13 +251,8 @@ footer{
     }
 }
 
-/* Hover effect on the button itself */
-.add-cart:hover {
-    background-color: #20c997;
-    transition: all 0.3s ease-out;
-}
 .c-h1{
-    margin-top: 100px;
+    margin-top: 20px;
 }
 .price-name{
     display: flex;
@@ -262,4 +263,177 @@ footer{
     height: 1px;
     width: 100%;
     background-color: #999;
+}
+.container-login{
+    text-align: center;
+}
+.login-btn{
+    background-color: #20c997;
+    transition: all 0.3s ease-in-out;
+}
+.login-btn:hover{
+    transform: scale(1.1);
+    background-color: #14926c;
+}
+.scrollToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #20c997;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    display: none; /* Hidden by default */
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+  }
+  
+  /* Hover effect */
+  .scrollToTopBtn:hover {
+    background-color: #14926c;
+    transform: scale(1.1);
+  }
+  .toggleDarkMode{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 15px;
+    height: 50px;
+    width: 180px;
+    z-index: 999;
+  }
+  .toggleLightMode{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 15px;
+    height: 50px;
+    width: 180px;
+    z-index: 999;
+  }
+  .toggleDarkMode, .toggleLightMode {
+    transition: opacity 0.3s ease;
+}
+
+body.dark-mode .toggleDarkMode {
+    opacity: 0; /* Dark mode button's opacity when dark mode is enabled */
+}
+
+body.dark-mode .toggleLightMode {
+    opacity: 1; /* Light mode button's opacity when dark mode is enabled */
+}
+
+body:not(.dark-mode) .toggleDarkMode {
+    opacity: 1; /* Dark mode button's opacity when dark mode is disabled */
+}
+
+body:not(.dark-mode) .toggleLightMode {
+    opacity: 0; /* Light mode button's opacity when dark mode is disabled */
+}
+
+/* Add styles for the container */
+.add-salad-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px; /* Full screen height */
+    padding: 20px;
+}
+
+/* Style the form itself */
+.add-salad-form {
+    width: 100%;
+    max-width: 600px; /* Set a max width for the form */
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Style form elements */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+input[type="text"],
+input[type="number"],
+textarea,
+input[type="file"],
+input[type="url"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Style for radio button group */
+.form-group div {
+    display: flex;
+    gap: 20px;
+}
+
+label input {
+    margin-right: 8px;
+}
+
+/* Make the file input and URL input responsive */
+#file-upload-group,
+#url-input-group {
+    display: block;
+}
+
+/* Style for submit button */
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #20c997;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #14926c;
 }

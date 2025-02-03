@@ -14,66 +14,78 @@
     <title>Pizza House</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
-        <div class="container">
-            <a href="index.html"><img width="50px" height="50px" src="pizzahouse.svg" alt="pizzahouse logo"></a>
-            <a class="navbar-brand fs-4" href="#"></a>
-            <a class="cart" href="#">
+  <nav class="navbar navbar-expand-lg bg-white">
+  <div class="container">
+      <a href="index.html"><img width="50px" height="50px" src="pizzahouse.svg" alt="pizzahouse logo"></a>
+      <div class="nav-items-1">
+          <ul class="navbar-nav">
+              <li class="nav-item">
+                  <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">About Us</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#section1">Our Menu</a>
+              </li>
+          </ul>
+      </div>
+      <div class="nav-items-2">
+          <a href="login.html" class="nav-icon"><i class="fa-solid fa-user"></i></a>
+          <a class="cart nav-icon" href="#">
               <i class="fa-solid fa-cart-shopping"></i>
               <p class="cart-number">0</p>
-            </a>
-        </div>
-    </nav>
+          </a>
+      </div>
+  </div>
+</nav>
 
     <h1 class="c-h1">Our Salads</h1>
     <section class="section-salad">
-        <div class="div-salad">
-            <div class="salad1">
-                <img class="d-item" src="vegetable salad.jpg" alt="Salad">
-                <button class="add-cart">Add to Cart</button>
-                <div class="text">
-                  <div class="price-name">
-                    <b><p>vegetable Salad</p></b>
-                    <b><p>10 $</p></b>
-                  </div>  
-                <b><p>Description</p></b>
-                </div>
-            </div>
-            <div class="salad2">
-                <img class="d-item" src="pasta salad.jpg" alt="Salad">
-                <div class="text">
-                  <div class="price-name">
-                    <b><p>Pasta Salad</p></b>
-                    <b><p>10 $</p></b>
-                  </div>  
-                  <b><p>Description</p></b>
-                    <button class="add-cart">Add to Cart</button></div>
-                </div>
-            <div class="salad3">
-                <img class="d-item" src="shopska salad.jpg" alt="Salad">
-                <div class="text">
-                  <div class="price-name">
-                    <b><p>Shopska Salad</p></b>
-                    <b><p>10 $</p></b>
-                  </div>  
-                <b><p>Description</p></b>
-                  <button class="add-cart">Add to Cart</button></div>
-                </div>
-            <div class="salad4">
-                <img class="d-item" src="chease salad.jpg" alt="Salad">
-                <div class="text">
-                  <div class="price-name">
-                    <b><p>Chease Salad</p></b>
-                    <b><p>10 $</p></b>
-                  </div>  
-                <b><p>Description</p></b>
-                  <button class="add-cart">Add to Cart</button>
-                </div>
-            </div>
-        </div>
+       <div class="div-salad">
+       </div>
     </section>
 
+    <div class="add-salad-form-container">
+    <form id="salad-form" class="add-salad-form">
+    <div class="form-group">
+        <label for="salad-name">Salad Name</label>
+        <input type="text" id="salad-name" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label for="salad-price">Price ($)</label>
+        <input type="number" id="salad-price" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label for="salad-description">Description</label>
+        <textarea id="salad-description" class="form-control" required></textarea>
+    </div>
 
+    <div class="form-group">
+        <label>Image Upload</label>
+        <div>
+            <label><input type="radio" name="image-option" id="upload-image" value="upload" checked> Upload Image</label>
+            <label><input type="radio" name="image-option" id="url-image" value="url"> Use Image URL</label>
+        </div>
+    </div>
+
+    <div class="form-group" id="file-upload-group">
+        <label for="salad-image-file">Choose Image</label>
+        <input type="file" id="salad-image-file" class="form-control">
+    </div>
+
+    <div class="form-group" id="url-input-group" style="display:none;">
+        <label for="salad-image-url">Image URL</label>
+        <input type="url" id="salad-image-url" class="form-control">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add Salad</button>
+</form>
+
+  </div>
+  
+  
+  
 
 
 
@@ -91,56 +103,59 @@
 
 
     
+    <button id="scrollToTopBtn" class="scrollToTopBtn"><i class="fa-solid fa-up-long"></i></button>
+    <button class="toggleDarkMode" id="darkModeButton" onclick="toggleDarkMode()">Dark mode<i class="fa-solid fa-moon"></i></button>
+    <button class="toggleLightMode" id="lightModeButton" onclick="toggleDarkMode()"><i class="fa-solid fa-sun"></i>Light mode</button>
 
     <footer class="text-white text-center py-4 mt-5">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-4">
-              <h5>What We Offer</h5>
-              <ul class="list-unstyled">
-                <li>Pizzas</li>
-                <li>Burgers</li>
-                <li>Salads</li>
-                <li>Drinks</li>
-                <li>Seafood</li>
-                <li>Desserts</li>
-              </ul>
-            </div>
-            <div class="col-md-4">
-              <h5>Information</h5>
-              <ul class="list-unstyled">
-                <li>About Us</li>
-                <li>Latest News</li>
-                <li>Our Menu</li>
-                <li>FAQ</li>
-                <li>Shop</li>
-                <li>Contact Us</li>
-              </ul>
-            </div>
-            <div class="col-md-4">
-          <ul class="list-unstyled">
-            <li id="tel"><a href="#"><i class="fa-solid fa-phone"></i> +1 718-999-3939</a></li>
-            <li id="loc"><a href="#"><i class="fa-solid fa-location-dot"></i> Boumerdes</a></li>
-            <li><a href="#"><i class="fa-brands fa-google"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-          </ul>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h5>What We Offer</h5>
+            <ul class="list-unstyled">
+              <li>Pizzas</li>
+              <li>Burgers</li>
+              <li>Salads</li>
+              <li>Drinks</li>
+              <li>Seafood</li>
+              <li>Desserts</li>
+            </ul>
           </div>
+          <div class="col-md-4">
+            <h5>Information</h5>
+            <ul class="list-unstyled">
+              <li>About Us</li>
+              <li>Latest News</li>
+              <li>Our Menu</li>
+              <li>FAQ</li>
+              <li>Shop</li>
+              <li>Contact Us</li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+        <ul class="list-unstyled">
+          <li id="tel"><a href="#"><i class="fa-solid fa-phone"></i> +1 718-999-3939</a></li>
+          <li id="loc"><a href="#"><i class="fa-solid fa-location-dot"></i> Boumerdes</a></li>
+          <li><a href="#"><i class="fa-brands fa-google"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+        </ul>
         </div>
-      </footer>
-      <div class="footer-separator"></div>
-      <footer class="text-white text-center py-3">
-        <div class="container">
-          <p class="mb-0">© 2024. All rights reserved.</p>
-        </div>
-      </footer>
-      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-      <script>
-        AOS.init({
-          duration: 500
-        });
-      </script>
-      <script src="index.js"></script>
-  </body>
-  </html>
+      </div>
+    </footer>
+    <div class="footer-separator"></div>
+    <footer class="text-white text-center py-3">
+      <div class="container">
+        <p class="mb-0">© 2024. All rights reserved.</p>
+      </div>
+    </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 500
+      });
+    </script>
+    <script src="main.js"></script>
+</body>
+</html>

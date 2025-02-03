@@ -14,45 +14,31 @@
     <title>Pizza House</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container">
-          
-    <a href="index.html"><img width="50px" height="50px" src="pizzahouse.svg" alt="pizzahouse logo"></a>
-            <a class="navbar-brand fs-4" href="#"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Pizza House</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">About us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Typography</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contacts</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                        </li>    
-                    </ul>
-                    <form class="d-flex mt-3" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </nav>
+  <nav class="navbar navbar-expand-lg bg-white">
+  <div class="container">
+      <a href="index.html"><img width="50px" height="50px" src="pizzahouse.svg" alt="pizzahouse logo"></a>
+      <div class="nav-items-1">
+          <ul class="navbar-nav">
+              <li class="nav-item">
+                  <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">About Us</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#section1">Our Menu</a>
+              </li>
+          </ul>
+      </div>
+      <div class="nav-items-2">
+          <a href="login.html" class="nav-icon"><i class="fa-solid fa-user"></i></a>
+          <a class="cart nav-icon" href="#">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <p class="cart-number">0</p>
+          </a>
+      </div>
+  </div>
+</nav>
 
     <div id="carouselExampleCaptions" class="carousel slide mb-4">
         <div class="carousel-indicators">
@@ -172,6 +158,9 @@
         </form>
     </div>
 
+    <button id="scrollToTopBtn" class="scrollToTopBtn"><i class="fa-solid fa-up-long"></i></button>
+    <button class="toggleDarkMode" id="darkModeButton" onclick="toggleDarkMode()">Dark mode<i class="fa-solid fa-moon"></i></button>
+    <button class="toggleLightMode" id="lightModeButton" onclick="toggleDarkMode()"><i class="fa-solid fa-sun"></i>Light mode</button>
     
     <footer class="text-white text-center py-4 mt-5">
       <div class="container">
@@ -222,6 +211,6 @@
         duration: 500
       });
     </script>
-    <script src="index.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
