@@ -372,6 +372,7 @@ body:not(.dark-mode) .toggleLightMode {
 .add-salad-form {
     width: 100%;
     max-width: 600px; /* Set a max width for the form */
+    color: black;
     background-color: #f9f9f9;
     padding: 30px;
     border-radius: 8px;
