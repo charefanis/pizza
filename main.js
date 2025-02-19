@@ -5,7 +5,7 @@ let products = [
         tag: 'vagetableSalad',
         price: 10,
         description: "Description",
-        image: "/vegetable-salad.jpg",
+        image: "vegetable-salad.jpg",
         inCart: 0
     },
     {
@@ -13,7 +13,7 @@ let products = [
         tag: 'pastaSalad',
         price: 10,
         description: "Description",
-        image: "/pasta-salad.jpg",
+        image: "pasta-salad.jpg",
         inCart: 0
     },
     {
@@ -21,7 +21,7 @@ let products = [
         tag: 'shopskaSalad',
         price: 10,
         description: "Description",
-        image: "/shopska-salad.jpg",
+        image: "shopska-salad.jpg",
         inCart: 0
     },
     {
@@ -29,7 +29,7 @@ let products = [
         tag: 'cheaseSalad',
         price: 10,
         description: "Description",
-        image: "/chease-salad.jpg",
+        image: "chease-salad.jpg",
         inCart: 0
     }
 ];
