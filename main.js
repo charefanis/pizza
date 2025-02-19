@@ -264,3 +264,35 @@ function addNewSalad(name, price, description, image) {
     // Clear the form fields
     document.getElementById('salad-form').reset();
 }
+
+
+
+document.getElementById('authForm').addEventListener('submit', function(event) {
+    event.preventDefault();  // Empêcher le rechargement de la page
+
+    // Récupération des valeurs des champs
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    // Validation simple
+    if (!name || !email || !password) {
+        document.getElementById('message').innerText = 'Please fill in all the fields.';
+        document.getElementById('message').style.color = 'red';
+        return;
+    }
+
+    // Vérification du format de l'email
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    if (!emailPattern.test(email)) {
+        document.getElementById('message').innerText = 'Please enter a valid email.';
+        document.getElementById('message').style.color = 'red';
+        return;
+    }
+
+    // Si tout est ok, on affiche un message de succès (simulé)
+    document.getElementById('message').innerText = `Hello ${name}, you are logged in!`;
+    document.getElementById('message').style.color = 'green';
+    
+    // Ici, tu pourrais envoyer les données au backend pour vérifier l'utilisateur dans une base de données, par exemple.
+});
