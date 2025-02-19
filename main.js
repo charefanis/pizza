@@ -271,7 +271,7 @@ document.getElementById('authForm').addEventListener('submit', function(event) {
     event.preventDefault();  // Empêcher le rechargement de la page
 
     // Récupération des valeurs des champs
-    const name = document.getElementById('name').value;
+    const name = document.getElementById('fName').value;
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
