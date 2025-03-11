@@ -197,7 +197,7 @@ function adjustFooter() {
     window.addEventListener("load", adjustFooter);
     window.addEventListener("resize", adjustFooter);
     
-
+/*
     // Check if the salad-form exists before adding the event listener
 const saladForm = document.getElementById('salad-form');
 if (saladForm) {
@@ -264,6 +264,145 @@ function addNewSalad(name, price, description, image) {
     // Clear the form fields
     document.getElementById('salad-form').reset();
 }
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const saladForm = document.getElementById('salad-form');
+
+if (saladForm) {
+    saladForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form from refreshing the page
+    
+        // Get input values
+        const name = document.getElementById('salad-name').value;
+        const price = parseFloat(document.getElementById('salad-price').value);
+        const description = document.getElementById('salad-description').value;
+        const imageOption = document.querySelector('input[name="image-option"]:checked').value;
+    
+        // Decide image source based on the selected option
+        let image = '';
+        if (imageOption === 'upload') {
+            const fileInput = document.getElementById('salad-image-file');
+            if (fileInput.files && fileInput.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    image = e.target.result; // Get the image file data URL
+                    addNewSalad(name, price, description, image); // Call function to add new salad
+                };
+                reader.readAsDataURL(fileInput.files[0]); // Read the file
+            }
+        } else if (imageOption === 'url') {
+            image = document.getElementById('salad-image-url').value; // Get the URL
+            addNewSalad(name, price, description, image); // Call function to add new salad
+        }
+    });
+
+    // Listen for changes on the image option radio buttons
+    const uploadImageRadio = document.getElementById('upload-image');
+    const urlImageRadio = document.getElementById('url-image');
+    const fileUploadGroup = document.getElementById('file-upload-group');
+    const urlInputGroup = document.getElementById('url-input-group');
+
+    uploadImageRadio.addEventListener('change', toggleImageInput);
+    urlImageRadio.addEventListener('change', toggleImageInput);
+
+    function toggleImageInput() {
+        if (uploadImageRadio.checked) {
+            fileUploadGroup.style.display = 'block';  // Show file input
+            urlInputGroup.style.display = 'none';    // Hide URL input
+        } else if (urlImageRadio.checked) {
+            fileUploadGroup.style.display = 'none';  // Hide file input
+            urlInputGroup.style.display = 'block';   // Show URL input
+        }
+    }
+
+    // Initialize the form with the correct input visibility
+    toggleImageInput();  // Run this to ensure the form is correctly initialized
+}
+
+// Function to add the new salad to the products array and to the page
+function addNewSalad(name, price, description, image) {
+    // Create new salad object
+    const newSalad = {
+        name: name,
+        tag: name.toLowerCase().replace(/\s+/g, ''),
+        price: price,
+        description: description,
+        image: image,
+        inCart: 0
+    };
+
+    // Add new salad to the products array
+    products.push(newSalad);
+
+    // Append the new salad to the page
+    const divSalad = document.querySelector(".div-salad");
+    const productHTML = `
+            <div class="salad">
+                <img class="d-item" src="${newSalad.image}" alt="${newSalad.name}">
+                <button class="add-cart">Add to Cart</button>
+                <div class="text">
+                    <div class="price-name">
+                        <b><p>${newSalad.name}</p></b>
+                        <b><p>${newSalad.price} $</p></b>
+                    </div>
+                    <b><p>${newSalad.description}</p></b>
+                </div>
+            </div>
+    `;
+    divSalad.innerHTML += productHTML;
+
+    // Clear the form fields
+    document.getElementById('salad-form').reset();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
