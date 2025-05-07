@@ -2,6 +2,9 @@ body{
     color: black;
     background-color: white;
 }
+nav{
+    background: #999;
+}
 .dark-mode{
     color: white;
     background-color: black;
@@ -14,9 +17,8 @@ body{
 }
 .nav-items-1{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    flex-direction: row;
+    width: 50%;
 }
 .c-item{
     height: 900px;
