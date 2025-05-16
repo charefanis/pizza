@@ -1,46 +1,112 @@
-body{
+body {
     color: black;
     background-color: white;
 }
-nav{
-    background: #999;
-}
-.dark-mode{
+
+.dark-mode {
     color: white;
     background-color: black;
 }
-.nav-items-1 a{
-    list-style-type: none;
-    text-decoration: none;
-    color: black;
-    margin: 0 15px;
+
+
+.navbar {
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
-.nav-items-1{
-    display: flex;
-    flex-direction: row;
-    width: 50%;
+
+.navbar-nav .nav-link {
+    color: #333;
+    font-weight: 500;
+    margin: 0 12px;
+    transition: color 0.3s;
 }
-.c-item{
+
+.navbar-nav .nav-link:hover {
+    color: #7b4bb7;
+}
+
+.navbar-brand img {
+    height: 50px;
+}
+
+.nav-icon {
+    color: #333;
+    font-size: 1.3rem;
+    position: relative;
+    transition: color 0.3s;
+    text-align: center;
+}
+
+
+.cart-number {
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    background: red;
+    color: white;
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 50%;
+}
+
+/* Responsive layout for icons inside collapsed menu */
+@media (max-width: 991.98px) {
+    .top-icons {
+        display: none !important;
+    }
+
+    .sidebar-icons {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .sidebar-icons {
+        display: none !important;
+    }
+}
+
+.cart-number {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background: red;
+    color: white;
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 50%;
+}
+
+.c-item {
     height: 900px;
     width: 100%;
 }
-.c-img{
+
+.c-img {
     height: 100%;
 }
-.c-h1{
+
+.c-h1 {
     text-align: center;
 }
-.section1{
+
+.section1 {
     display: flex;
     justify-content: center;
 }
-.grid{
+
+.grid {
     display: flex;
     height: 700px;
     width: 1100px;
     flex-wrap: wrap;
     justify-content: space-around;
 }
+
 .c-items {
     position: relative;
     display: flex;
@@ -63,24 +129,29 @@ nav{
     object-fit: cover;
     transition: opacity 0.6s ease-in-out;
 }
-.img-front{
+
+.img-front {
     position: absolute;
 }
-.img-front:hover{
+
+.img-front:hover {
     opacity: 0;
     cursor: pointer;
 }
+
 .image-container {
     position: relative;
     height: 400px;
     background-color: black;
 }
+
 .image-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     opacity: 60%;
 }
+
 .overlay-text {
     font-family: "Roboto";
     position: absolute;
@@ -90,21 +161,27 @@ nav{
     color: white;
     text-align: center;
 }
-#tel a, #loc a, .fa-brands {
+
+#tel a,
+#loc a,
+.fa-brands {
     color: white;
 }
-.cart{
+
+.cart {
     color: black;
     position: relative;
     font-size: 24px;
     margin: 0 15px;
 }
-.fa-user{
+
+.fa-user {
     color: black;
     font-size: 24px;
     margin: 0 15px;
 }
-.cart-number{
+
+.cart-number {
     position: absolute;
     top: -10px;
     right: -15px;
@@ -121,6 +198,7 @@ nav{
     margin: 0;
     opacity: 0;
 }
+
 .fade-down {
     animation: fadeDown 0.8s ease-in-out forwards;
 }
@@ -128,22 +206,28 @@ nav{
 @keyframes fadeDown {
     0% {
         opacity: 0;
-        transform: translateY(-20px); /* Start higher */
+        transform: translateY(-20px);
+        /* Start higher */
     }
+
     100% {
         opacity: 1;
-        transform: translateY(0); /* End at original position */
+        transform: translateY(0);
+        /* End at original position */
     }
 }
-@media(max-width:650px){
-    .c-item{
+
+@media(max-width:650px) {
+    .c-item {
         height: 450px;
         width: 100%;
     }
-    .c-img{
+
+    .c-img {
         height: 100%;
     }
-    .grid{
+
+    .grid {
         display: flex;
         height: 2000px;
         width: 300px;
@@ -151,8 +235,9 @@ nav{
         justify-content: space-around;
     }
 }
-@media(min-width:651px){
-    .grid{
+
+@media(min-width:651px) {
+    .grid {
         display: flex;
         height: 1100px;
         width: 700px;
@@ -160,8 +245,9 @@ nav{
         justify-content: space-around;
     }
 }
-@media(min-width:1050px){
-    .grid{
+
+@media(min-width:1050px) {
+    .grid {
         display: flex;
         height: 700px;
         width: 1100px;
@@ -169,14 +255,17 @@ nav{
         justify-content: space-around;
     }
 }
-footer{
+
+footer {
     background-color: rgb(32, 30, 30);
 }
-.section-salad{
+
+.section-salad {
     display: flex;
     justify-content: center;
 }
-.div-salad{
+
+.div-salad {
     margin-top: 70px;
     margin-bottom: 70px;
     width: 700px;
@@ -185,25 +274,29 @@ footer{
     text-align: center;
     flex-wrap: wrap;
 }
-.d-item{
+
+.d-item {
     height: 300px;
     width: 300px;
     object-fit: cover;
-    border-top-right-radius: 10px; 
-    border-top-left-radius: 10px; 
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
     box-shadow: 0 -1px 10px hsla(0, 0%, 0%, 0.3);
     position: relative;
 }
-.salad{
+
+.salad {
     margin: 0 15px;
     margin-bottom: 15px;
     transition: all 0.4s;
 }
-.salad:hover{
+
+.salad:hover {
     transform: scale(1.1);
     z-index: 999;
 }
-.text{
+
+.text {
     background-color: white;
     color: black;
     height: 120px;
@@ -215,7 +308,8 @@ footer{
     justify-content: center;
     align-items: center;
 }
-.add-cart{
+
+.add-cart {
     position: absolute;
     left: 50%;
     bottom: 50%;
@@ -226,10 +320,13 @@ footer{
     width: 150px;
     border: none;
     border-radius: 10px;
-    opacity: 0; /* Initially hidden */
-    visibility: hidden; /* Ensure it's not interactive when not visible */
+    opacity: 0;
+    /* Initially hidden */
+    visibility: hidden;
+    /* Ensure it's not interactive when not visible */
     transition: all 0.3s ease-in-out;
 }
+
 /* Hover effect on the button itself */
 .add-cart:hover {
     background-color: #20c997;
@@ -237,10 +334,11 @@ footer{
 }
 
 /* Hovering on the parent container */
-.salad:hover .add-cart { 
+.salad:hover .add-cart {
     opacity: 1;
     visibility: visible;
-    animation: fadeInFromTop 0.5s ease-out; /* Trigger the animation */
+    animation: fadeInFromTop 0.5s ease-out;
+    /* Trigger the animation */
 }
 
 /* Keyframes for fade-in from the left */
@@ -249,36 +347,43 @@ footer{
         opacity: 0;
         transform: translate(-50%, -250%);
     }
+
     100% {
         opacity: 1;
         transform: translate(-50%, -50%);
     }
 }
 
-.c-h1{
+.c-h1 {
     margin-top: 20px;
 }
-.price-name{
+
+.price-name {
     display: flex;
     justify-content: space-between;
     width: 90%;
 }
-.footer-separator{
+
+.footer-separator {
     height: 1px;
     width: 100%;
     background-color: #999;
 }
-.container-login{
+
+.container-login {
     text-align: center;
 }
-.login-btn{
+
+.login-btn {
     background-color: #20c997;
     transition: all 0.3s ease-in-out;
 }
-.login-btn:hover{
+
+.login-btn:hover {
     transform: scale(1.1);
     background-color: #14926c;
 }
+
 .scrollToTopBtn {
     position: fixed;
     bottom: 20px;
@@ -289,7 +394,8 @@ footer{
     padding: 10px 20px;
     font-size: 20px;
     cursor: pointer;
-    display: none; /* Hidden by default */
+    display: none;
+    /* Hidden by default */
     border-radius: 50%;
     height: 50px;
     width: 50px;
@@ -298,14 +404,15 @@ footer{
     align-items: center;
     justify-content: center;
     z-index: 999;
-  }
-  
-  /* Hover effect */
-  .scrollToTopBtn:hover {
+}
+
+/* Hover effect */
+.scrollToTopBtn:hover {
     background-color: #14926c;
     transform: scale(1.1);
-  }
-  .toggleDarkMode{
+}
+
+.toggleDarkMode {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -322,8 +429,9 @@ footer{
     height: 50px;
     width: 180px;
     z-index: 999;
-  }
-  .toggleLightMode{
+}
+
+.toggleLightMode {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -340,25 +448,31 @@ footer{
     height: 50px;
     width: 180px;
     z-index: 999;
-  }
-  .toggleDarkMode, .toggleLightMode {
+}
+
+.toggleDarkMode,
+.toggleLightMode {
     transition: opacity 0.3s ease;
 }
 
 body.dark-mode .toggleDarkMode {
-    opacity: 0; /* Dark mode button's opacity when dark mode is enabled */
+    opacity: 0;
+    /* Dark mode button's opacity when dark mode is enabled */
 }
 
 body.dark-mode .toggleLightMode {
-    opacity: 1; /* Light mode button's opacity when dark mode is enabled */
+    opacity: 1;
+    /* Light mode button's opacity when dark mode is enabled */
 }
 
 body:not(.dark-mode) .toggleDarkMode {
-    opacity: 1; /* Dark mode button's opacity when dark mode is disabled */
+    opacity: 1;
+    /* Dark mode button's opacity when dark mode is disabled */
 }
 
 body:not(.dark-mode) .toggleLightMode {
-    opacity: 0; /* Light mode button's opacity when dark mode is disabled */
+    opacity: 0;
+    /* Light mode button's opacity when dark mode is disabled */
 }
 
 /* Add styles for the container */
@@ -367,14 +481,16 @@ body:not(.dark-mode) .toggleLightMode {
     justify-content: center;
     color: black;
     align-items: center;
-    height: 600px; /* Full screen height */
+    height: 600px;
+    /* Full screen height */
     padding: 20px;
 }
 
 /* Style the form itself */
 .add-salad-form {
     width: 100%;
-    max-width: 600px; /* Set a max width for the form */
+    max-width: 600px;
+    /* Set a max width for the form */
     background-color: #f9f9f9;
     padding: 30px;
     border-radius: 8px;
