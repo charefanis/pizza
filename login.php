@@ -27,31 +27,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $email = $_POST['email'];
   $password = $_POST['password'];
 
-  // Input validation: Check if email or password is empty
+  // Input validation
   if (empty($email) || empty($password)) {
     echo "Both email and password are required.";
   } else {
-    // Prepare SQL query to check if the email exists in the database
+    // Query to check if user exists
     $sql = "SELECT * FROM consomateur WHERE email_cnsm = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("s", $email); // Bind email parameter to the query
+    $stmt->bind_param("s", $email);
     $stmt->execute();
     $result = $stmt->get_result();
 
-    // If a matching email is found
     if ($result->num_rows > 0) {
-      $user = $result->fetch_assoc(); // Fetch user data
+      $user = $result->fetch_assoc();
 
-      // Verify the password entered with the hashed password in the database
+      // Verify password
       if (password_verify($password, $user['password_cnsm'])) {
-        // Set session variables if login is successful
+        // Set session variables
         $_SESSION['user_id'] = $user['num_cnsm'];
         $_SESSION['user_name'] = $user['nom_cnsm'];
         $_SESSION['user_email'] = $user['email_cnsm'];
         $_SESSION['role'] = $user['role'];
 
-        // Redirect to dashboard (or another page) after successful login
-        header("Location: dashboard.php");
+        // Redirect based on role (if needed)
+        if ($user['role'] === 'admin') {
+          header("Location: admin_dashboard.php"); // adjust file as needed
+        } else {
+          header("Location: dashboard.php"); // general user dashboard
+        }
         exit();
       } else {
         echo "Incorrect password.";
@@ -60,10 +63,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       echo "No user found with that email address.";
     }
 
-    // Close the prepared statement
     $stmt->close();
   }
 }
+
 
 // Close the database connection
 $conn->close();

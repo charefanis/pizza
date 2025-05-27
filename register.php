@@ -177,10 +177,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "This email is already registered.";
         } else {
             // Insert the new user into the database
-            $stmt = $conn->prepare("INSERT INTO consomateur (nom_cnsm, email_cnsm, password_cnsm, date_creation) 
+            $stmt = $conn->prepare("INSERT INTO consomateur (nom_cnsm, email_cnsm, password_cnsm, role, date_creation) 
                                     VALUES (?, ?, ?, ?, NOW())");
             $role = 'client'; // Default role
-            $stmt->bind_param("ssss", $fullname, $email, $hashedPassword);
+            $stmt->bind_param("ssss", $fullname, $email, $hashedPassword, $role);
 
             if ($stmt->execute()) {
                 echo "Registration successful! You can <a href='login.php'>log in</a> now.";
