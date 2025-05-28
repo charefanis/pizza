@@ -2,7 +2,7 @@
     <div class="container">
 
       <!-- Left: Logo -->
-      <a class="navbar-brand" href="index.html">
+      <a class="navbar-brand" href="index.php">
         <img src="pizzahouse.svg" alt="Logo">
       </a>
 
@@ -15,13 +15,13 @@
       <div class="collapse navbar-collapse justify-content-center" id="mainNavbar">
         <ul class="navbar-nav mb-2 mb-lg-0 text-center">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="index.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#about">About</a>
+            <a class="nav-link" href="about.php">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#menu">Menu</a>
+            <a class="nav-link" href="menu.php">Menu</a>
           </li>
         </ul>
 

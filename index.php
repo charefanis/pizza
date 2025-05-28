@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=<?php echo time();?>">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -70,13 +70,13 @@
     <div>
       <h1 class="c-h1" data-aos="zoom-out">OUR MENU</h1>
       <div class="grid">
-        <a href="salad.html">
+        <a href="salad.php">
           <div class="c-items" data-aos="fade-up">
             <img src="Salad.jpg" class="img-front" alt="salad">
             <img src="Salad2.jpg" alt="salad">
           </div>
         </a>
-        <a href="">
+        <a href="pizza.php">
           <div class="c-items" data-aos="zoom-in">
             <img src="Pizza4.jpg" class="img-front" alt="pizza">
             <img src="Pizza4-2.jpg" alt="pizza">
@@ -120,7 +120,7 @@
     </div>
   </div>
 
-  <div class="container mt-5" data-aos="zoom-out">
+  <div class="container mt-5" style="width:500px;" data-aos="zoom-out">
     <h1 class="text-center mb-4">Contact Form</h1>
     <form>
       <div class="mb-3">
@@ -163,7 +163,7 @@
       duration: 500
     });
   </script>
-  <script src="main.js"></script>
+    <script src="main.js?v=<?php echo time();?>"></script>
 </body>
 
 </html>

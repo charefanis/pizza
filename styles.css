@@ -5,12 +5,12 @@ body {
 
 .dark-mode {
     color: white;
-    background-color: black;
+    background-color: rgb(32, 30, 30);;
 }
 
 
 .navbar {
-    background-color: #ffffff;
+    background-color: white;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
@@ -394,7 +394,6 @@ footer {
     padding: 10px 20px;
     font-size: 20px;
     cursor: pointer;
-    display: none;
     /* Hidden by default */
     border-radius: 50%;
     height: 50px;
