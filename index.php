@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <link rel="stylesheet" href="styles.css?v=<?php echo time();?>">
+    <link rel="stylesheet" href="assets/css/styles.css?v=<?php echo time(); ?>">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -36,21 +36,21 @@
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active c-item">
-        <img src="pizza1.jpg" class="d-block w-100 c-img" alt="pizza">
+        <img src="assets/img/pizza/pizza1.jpg" class="d-block w-100 c-img" alt="pizza">
         <div class="carousel-caption d-none d-md-block">
           <h5>Perfect pizza</h5>
           <p>Experience the taste of a perfect pizza at PizzaHouse, one of the best restaurants!</p>
         </div>
       </div>
       <div class="carousel-item c-item">
-        <img src="pizza2.jpg" class="d-block w-100 c-img" alt="pizza">
+        <img src="assets/img/pizza/pizza2.jpg" class="d-block w-100 c-img" alt="pizza">
         <div class="carousel-caption d-none d-md-block">
           <h5>Quality ingredient</h5>
           <p>We use only the best ingredients to make one-of-a-kind pizzas for our customers.</p>
         </div>
       </div>
       <div class="carousel-item c-item">
-        <img src="pizza3.jpg" class="d-block w-100 c-img" alt="pizza">
+        <img src="assets/img/pizza/pizza3.jpg" class="d-block w-100 c-img" alt="pizza">
         <div class="carousel-caption d-none d-md-block">
           <a href="#section1"><button class="btn btn-warning mb-3"><b>VIEW OUR MENU</b></button></a>
         </div>
@@ -72,38 +72,38 @@
       <div class="grid">
         <a href="salad.php">
           <div class="c-items" data-aos="fade-up">
-            <img src="Salad.jpg" class="img-front" alt="salad">
-            <img src="Salad2.jpg" alt="salad">
+            <img src="assets/img/salade/Salad.jpg" class="img-front" alt="salad">
+            <img src="assets/img/salade/Salad2.jpg" alt="salad">
           </div>
         </a>
         <a href="pizza.php">
           <div class="c-items" data-aos="zoom-in">
-            <img src="Pizza4.jpg" class="img-front" alt="pizza">
-            <img src="Pizza4-2.jpg" alt="pizza">
+            <img src="assets/img/pizza/Pizza4.jpg" class="img-front" alt="pizza">
+            <img src="assets/img/pizza/Pizza4-2.jpg" alt="pizza">
           </div>
         </a>
         <a href="">
           <div class="c-items" data-aos="fade-down">
-            <img src="Burger.jpg" class="img-front" alt="burger">
-            <img src="Burger2.jpg" alt="burger">
+            <img src="assets/img/burger/Burger.jpg" class="img-front" alt="burger">
+            <img src="assets/img/burger/Burger2.jpg" alt="burger">
           </div>
         </a>
         <a href="">
           <div class="c-items" data-aos="fade-down">
-            <img src="Dessert.jpg" class="img-front" alt="dessert">
-            <img src="Dessert2.jpg" alt="dessert">
+            <img src="assets/img/dessert/Dessert.jpg" class="img-front" alt="dessert">
+            <img src="assets/img/dessert/Dessert2.jpg" alt="dessert">
           </div>
         </a>
         <a href="">
           <div class="c-items" data-aos="zoom-in">
-            <img src="Drink.jpg" class="img-front" alt="drink">
-            <img src="Drink2.jpg" alt="drink">
+            <img src="assets/img/drink/Drink.jpg" class="img-front" alt="drink">
+            <img src="assets/img/drink/Drink2.jpg" alt="drink">
           </div>
         </a>
         <a href="">
           <div class="c-items" data-aos="fade-up">
-            <img src="Seafood.jpg" class="img-front" alt="seafood">
-            <img src="Seafood2.jpg" alt="seafood">
+            <img src="assets/img/seafood/Seafood.jpg" class="img-front" alt="seafood">
+            <img src="assets/img/seafood/Seafood2.jpg" alt="seafood">
           </div>
         </a>
       </div>
@@ -163,7 +163,7 @@
       duration: 500
     });
   </script>
-    <script src="main.js?v=<?php echo time();?>"></script>
+    <script src="assets/js/main.js?v=<?php echo time();?>"></script>
 </body>
 
 </html>

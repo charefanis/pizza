@@ -11,7 +11,7 @@ if (!isset($_SESSION['user_id']))
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="assets/css/styles.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -23,61 +23,93 @@ if (!isset($_SESSION['user_id']))
     </style>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <title>Pizza House</title>
+    <style>
+        body {
+            display: grid !important;
+            grid-template-columns: 300px 1fr !important;
+            grid-template-rows: auto 1fr auto !important;
+            grid-template-areas:
+                "navbar navbar"
+                "sidebar main"
+                "footer footer" !important;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            grid-area: navbar !important;
+        }
+
+        aside {
+            grid-area: sidebar !important;
+        }
+
+        footer {
+            grid-area: footer !important;
+        }
+
+        aside button {
+            background: none;
+            border: none;
+            font-weight: 600;
+            color: white;
+            margin: 10px 0;
+        }
+
+        .btns-container {
+            width: 100%;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            margin-top: 10px;
+        }
+
+        .logout-btn form {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        .div-container{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+    </style>
+    </style>
 </head>
 
 <body>
     <?php
     include_once("nav.php");
     ?>
-    <section class="mt-5">
-        <div class="add-salad-form-container">
-            <form class="add-salad-form" action="admin_dashboard.php" method="POST" enctype="multipart/form-data">
-                <div class="form-group">
-                    <label for="menu" class="form-label">Choose a type</label>
-                    <select class="form-select" id="menu" name="type_art" required>
-                        <option value="Salade">Salade</option>
-                        <option value="Burger">Burger</option>
-                        <option value="Pizza">Pizza</option>
-                        <option value="Drink">Drink</option>
-                        <option value="Dessert">Dessert</option>
-                        <option value="SeaFood">SeaFood</option>
-                    </select>
-                </div>
 
-                <div class="form-group">
-                    <label for="salad-name">Product Name</label>
-                    <input type="text" class="form-control" name="salad_name" id="salad-name" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="salad-price">Price ($)</label>
-                    <input type="number" class="form-control" name="salad_price" id="salad-price" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="salad-description">Description</label>
-                    <textarea class="form-control" name="salad_description" id="salad-description" required></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="salad-image-file">Choose Image</label>
-                    <input type="file" name="salad_image" id="salad-image-file" class="form-control" required>
-                </div>
-
-                <button type="submit" name="submit">Add Salad</button>
-            </form>
-
+    <aside style="background-color: rgb(32, 30, 30);">
+        <div class="div-container">
+            <div class="btns-container">
+                <button onclick="toggleIframe1()">Dashboard</button>
+                <button onclick="toggleIframe2()">Add product</button>
+                <button onclick="toggleIframe3()">Manage Menu</button>
+                <button onclick="toggleIframe4()">Orders</button>
+                <button onclick="toggleIframe5()">Customers</button>
+            </div>
+            <div class="logout-btn">
+                <form action="logout.php">
+                    <button style="color:red;">Logout</button>
+                </form>
+            </div>
         </div>
-    </section>
-    <button id="scrollToTopBtn" class="scrollToTopBtn"><i class="fa-solid fa-up-long"></i></button>
-    <button class="toggleDarkMode" id="darkModeButton" onclick="toggleDarkMode()">Dark mode<i
-            class="fa-solid fa-moon"></i></button>
-    <button class="toggleLightMode" id="lightModeButton" onclick="toggleDarkMode()"><i class="fa-solid fa-sun"></i>Light
-        mode</button>
-
+    </aside>
+    <main>
+        <iframe id="iframe1" src="dashboard_overview.php" style="width: 100%; height:100%; display:none;"></iframe>
+        <iframe id="iframe2" src="add_product.php" style="width: 100%; height:100%; display:none;"></iframe>
+        <iframe id="iframe3" src="manage_product.php" style="width: 100%; height:100%; display:none;"></iframe>
+        <iframe id="iframe4" src="orders.php" style="width: 100%; height:100%; display:none;"></iframe>
+        <iframe id="iframe5" src="manage_customers.php" style="width: 100%; height:100%; display:none;"></iframe>
+    </main>
 
     <?php
-    include_once("footer1.php");
     include_once("footer2.php");
     ?>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -86,7 +118,50 @@ if (!isset($_SESSION['user_id']))
             duration: 500
         });
     </script>
-    <script src="main.js?v=<?php echo time(); ?>"></script>
+    <script>
+        let iframe1 = document.getElementById('iframe1');
+        let iframe2 = document.getElementById('iframe2');
+        let iframe3 = document.getElementById('iframe3');
+        let iframe4 = document.getElementById('iframe4');
+        let iframe5 = document.getElementById('iframe5');
+
+        function toggleIframe1() {
+            iframe1.style.display = "flex";
+            iframe2.style.display = "none";
+            iframe3.style.display = "none";
+            iframe4.style.display = "none";
+            iframe5.style.display = "none";
+        }
+        function toggleIframe2() {
+            iframe1.style.display = "none";
+            iframe2.style.display = "flex";
+            iframe3.style.display = "none";
+            iframe4.style.display = "none";
+            iframe5.style.display = "none";
+        }
+        function toggleIframe3() {
+            iframe1.style.display = "none";
+            iframe2.style.display = "none";
+            iframe3.style.display = "flex";
+            iframe4.style.display = "none";
+            iframe5.style.display = "none";
+        }
+        function toggleIframe4() {
+            iframe1.style.display = "none";
+            iframe2.style.display = "none";
+            iframe3.style.display = "none";
+            iframe4.style.display = "flex";
+            iframe5.style.display = "none";
+        }
+        function toggleIframe5() {
+            iframe1.style.display = "none";
+            iframe2.style.display = "none";
+            iframe3.style.display = "none";
+            iframe4.style.display = "none";
+            iframe5.style.display = "flex";
+        }
+    </script>
+    <script src="assets/js/main.js?v=<?php echo time(); ?>"></script>
 </body>
 
 </html>
@@ -95,13 +170,13 @@ if (!isset($_SESSION['user_id']))
 if (isset($_POST['submit'])) {
     // Récupérer les données du formulaire
     $type_art = $_POST['type_art'];
-    $saladName = $_POST['salad_name'];
-    $saladPrice = $_POST['salad_price'];
-    $saladDescription = $_POST['salad_description'];
+    $productName = $_POST['product_name'];
+    $productPrice = $_POST['product_price'];
+    $productDescription = $_POST['product_description'];
 
     // Traitement de l'image uploadée
-    if (isset($_FILES['salad_image']) && $_FILES['salad_image']['error'] == 0) {
-        $file = $_FILES['salad_image'];
+    if (isset($_FILES['product_image']) && $_FILES['product_image']['error'] == 0) {
+        $file = $_FILES['product_image'];
 
         // Informations sur le fichier
         $fileName = $file['name'];
@@ -119,12 +194,12 @@ if (isset($_POST['submit'])) {
             // Vérifie si la taille du fichier est inférieure à 5 Mo
             if ($fileSize <= 5 * 1024 * 1024) {
                 // Générer un nom unique pour le fichier
-                $newFileName = uniqid('salad_', true) . '.' . $fileExt;
+                $newFileName = uniqid('product_', true) . '.' . $fileExt;
                 $uploadDirectory = 'assets/img/' . $type_art; // Dossier de destination
-                $newFileName=$uploadDirectory . $newFileName;
+                $newFileName = $uploadDirectory . $newFileName;
                 // Déplace le fichier vers le dossier 'uploads'
                 if (move_uploaded_file($fileTmpName, $newFileName)) {
-                    echo "Fichier téléchargé avec succès : " . $newFileName;
+                    echo "Fichier téléchargé avec succès";
                 } else {
                     echo "Erreur : Le fichier n'a pas pu être téléchargé.";
                 }
@@ -140,21 +215,21 @@ if (isset($_POST['submit'])) {
     // Maintenant, tu peux insérer les données dans la base de données si nécessaire
     // Exemple avec MySQLi (à adapter à ton propre système de base de données)
     // Assure-toi que ta base de données est prête à accepter ces informations
-    
+
     $conn = new mysqli('localhost', 'root', '', 'pizzahouse');
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
 
     $sql = "INSERT INTO article (nom_art,prix_art,dsc_art,type_art,url_art) 
-            VALUES ('$saladName', '$saladPrice', '$saladDescription', '$type_art','$newFileName')";
+            VALUES ('$productName', '$productPrice', '$productDescription', '$type_art','$newFileName')";
     echo $sql;
     if ($conn->query($sql) === TRUE) {
-        echo "Nouvelle salade ajoutée avec succès!";
+        echo "New product added successfully!";
     } else {
-        echo "Erreur: " . $conn->error;
+        echo "Error: " . $conn->error;
     }
 
     $conn->close();
-    }
+}
 ?>

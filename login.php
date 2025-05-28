@@ -58,7 +58,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
       }
     } else {
-      echo "No user found with that email address.";
     }
 
     $stmt->close();
@@ -77,7 +76,7 @@ $conn->close();
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <link rel="stylesheet" href="styles.css?v=<?php echo time();?>">
+    <link rel="stylesheet" href="assets/css/styles.css?v=<?php echo time(); ?>">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -139,18 +138,15 @@ $conn->close();
       if (isset($_SESSION['user_id']) && $_SESSION['role'] === 'admin') {
         header("Location: admin_dashboard.php"); // adjust file as needed
       } 
-       if (isset($_SESSION['user_id']) && $_SESSION['client'] === 'admin') {
-        header("Location: dashboard.php"); // general user dashboard
+       if (isset($_SESSION['user_id']) && $_SESSION['role'] === 'client') {
+        header("Location: client_dashboard.php"); // general user dashboard
       }
-
-
       ?>
       </p>
     </div>
   </section>
 
 
-  <button id="scrollToTopBtn" class="scrollToTopBtn"><i class="fa-solid fa-up-long"></i></button>
   <button class="toggleDarkMode" id="darkModeButton" onclick="toggleDarkMode()">Dark mode<i
       class="fa-solid fa-moon"></i></button>
   <button class="toggleLightMode" id="lightModeButton" onclick="toggleDarkMode()"><i class="fa-solid fa-sun"></i>Light
@@ -159,7 +155,7 @@ $conn->close();
   <?php
   include_once("footer2.php");
   ?>
-    <script src="main.js?v=<?php echo time();?>"></script>
+    <script src="assets/js/main.js?v=<?php echo time();?>"></script>
 </body>
 
 </html>
